@@ -3,19 +3,12 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-/*
-    filepaths for testcases:
-
-D:\Desktop\Olesya\Developing\Java\Java_HW2\inputs\basics.txt
-D:\Desktop\Olesya\Developing\Java\Java_HW2\inputs\data.txt
-D:\Desktop\Olesya\Developing\Java\Java_HW2\inputs\html.txt
-D:\Desktop\Olesya\Developing\Java\Java_HW2\inputs\info.txt
-D:\Desktop\Olesya\Developing\Java\Java_HW2\inputs\link.txt
-D:\Desktop\Olesya\Developing\Java\Java_HW2\inputs\test.txt
- */
-
 public class Main {
     public static void main(String[] args) {
+        System.out.print("""
+                \nThis program will count all latin and cyrillic symbols met in a file.
+                \u001B[36mYou do not need to specify result file's extension, results will be found in /results/.\u001B[0m\s""");
+
         Scanner in = new Scanner(System.in);
         try {
             Path resultsDirectory = Path.of("results");
@@ -27,7 +20,7 @@ public class Main {
         while (true) {
             try {
                 // OPENING A FILE
-                System.out.print("\nEnter filepath for analysis: ");
+                System.out.println("\n\nEnter filepath for analysis: ");
                 Path filePath = Path.of(in.nextLine());
                 FileInfo.checkExistence(filePath);
 
